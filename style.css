@@ -2622,3 +2622,495 @@ body.light .project-actions .live-btn {
     }
 
 }
+
+/* =========================================================
+   FINAL PREMIUM LIGHT MODE POLISH
+   Dark theme + existing layouts remain unchanged.
+========================================================= */
+
+body.light {
+    --bg: #f4f7fb;
+    --bg-soft: #eef3f9;
+
+    --card: rgba(255, 255, 255, 0.84);
+    --card-solid: #ffffff;
+
+    --text: #101828;
+    --text-soft: #344054;
+    --muted: #667085;
+
+    --primary: #6d5dfc;
+    --primary-light: #7467f5;
+    --secondary: #168acb;
+    --success: #159d72;
+
+    --border: rgba(31, 41, 55, 0.10);
+    --border-bright: rgba(109, 93, 252, 0.34);
+
+    --shadow:
+        0 22px 55px rgba(15, 23, 42, 0.10),
+        0 4px 14px rgba(15, 23, 42, 0.04);
+
+    background:
+        radial-gradient(
+            circle at 8% 8%,
+            rgba(109, 93, 252, 0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 92% 28%,
+            rgba(22, 138, 203, 0.08),
+            transparent 27%
+        ),
+        linear-gradient(
+            180deg,
+            #f8faff 0%,
+            #f4f7fb 42%,
+            #f8fafc 100%
+        );
+
+    background-attachment: fixed;
+}
+
+/* Header / navigation */
+
+body.light .header.scrolled {
+    background: rgba(248, 250, 255, 0.86);
+    border-color: rgba(31, 41, 55, 0.08);
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.055);
+    backdrop-filter: blur(22px) saturate(150%);
+}
+
+body.light .nav-link {
+    color: #667085;
+}
+
+body.light .nav-link:hover,
+body.light .nav-link.active {
+    color: #101828;
+}
+
+body.light .resume-btn {
+    background: rgba(109, 93, 252, 0.07);
+    border-color: rgba(109, 93, 252, 0.24);
+    color: #4738d1;
+}
+
+body.light .resume-btn:hover {
+    background: rgba(109, 93, 252, 0.12);
+    border-color: rgba(109, 93, 252, 0.38);
+}
+
+body.light .icon-btn {
+    background: rgba(255, 255, 255, 0.86);
+    border-color: rgba(31, 41, 55, 0.10);
+    color: #202939;
+    box-shadow: 0 7px 20px rgba(15, 23, 42, 0.05);
+}
+
+body.light .icon-btn:hover {
+    border-color: rgba(109, 93, 252, 0.30);
+    background: #ffffff;
+}
+
+body.light .nav {
+    color: #202939;
+}
+
+/* General section styling */
+
+body.light .section-alt {
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            rgba(109, 93, 252, 0.035),
+            rgba(22, 138, 203, 0.018),
+            transparent
+        );
+}
+
+body.light .section-tag {
+    color: #3974c8;
+}
+
+body.light .section-description {
+    color: #667085;
+}
+
+body.light .gradient-text {
+    background:
+        linear-gradient(
+            110deg,
+            #5b4df1,
+            #4267d5,
+            #1787bf
+        );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Buttons */
+
+body.light .btn-primary {
+    color: #ffffff;
+    background:
+        linear-gradient(
+            135deg,
+            #6d5dfc,
+            #2f8bd3
+        );
+    box-shadow:
+        0 14px 32px rgba(91, 77, 241, 0.20);
+}
+
+body.light .btn-primary:hover {
+    box-shadow:
+        0 18px 38px rgba(91, 77, 241, 0.27);
+}
+
+body.light .btn-secondary {
+    background: rgba(255, 255, 255, 0.82);
+    border-color: rgba(31, 41, 55, 0.11);
+    color: #202939;
+    box-shadow: 0 7px 20px rgba(15, 23, 42, 0.045);
+}
+
+body.light .btn-secondary:hover {
+    border-color: rgba(109, 93, 252, 0.30);
+    background: #ffffff;
+}
+
+/* Hero */
+
+body.light .availability-badge {
+    background: rgba(21, 157, 114, 0.07);
+    border-color: rgba(21, 157, 114, 0.18);
+    color: #107757;
+}
+
+body.light .hello,
+body.light .hero-links a {
+    color: #667085;
+}
+
+body.light .hero-description {
+    color: #475467;
+}
+
+body.light .hero-links a:hover {
+    color: #3974c8;
+}
+
+/* Profile card */
+
+body.light .profile-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(247, 249, 255, 0.94)
+        );
+    border-color: rgba(31, 41, 55, 0.09);
+    box-shadow:
+        0 24px 60px rgba(15, 23, 42, 0.09),
+        0 1px 0 rgba(255, 255, 255, 0.9) inset;
+}
+
+body.light .photo-ring {
+    box-shadow: 0 12px 34px rgba(109, 93, 252, 0.20);
+}
+
+body.light .profile-position {
+    color: #5f53d9;
+}
+
+body.light .profile-skills span,
+body.light .tech-list span,
+body.light .education-tags span {
+    background: rgba(109, 93, 252, 0.055);
+    border-color: rgba(109, 93, 252, 0.13);
+    color: #475467;
+}
+
+body.light .profile-contact {
+    background: rgba(109, 93, 252, 0.075);
+    border-color: rgba(109, 93, 252, 0.25);
+    color: #4438bf;
+}
+
+body.light .profile-contact:hover {
+    background: rgba(109, 93, 252, 0.115);
+}
+
+/* About */
+
+body.light .about-details {
+    background: rgba(255, 255, 255, 0.80);
+    border-color: rgba(31, 41, 55, 0.09);
+    box-shadow: 0 15px 36px rgba(15, 23, 42, 0.05);
+}
+
+body.light .detail-row:hover {
+    background: rgba(109, 93, 252, 0.028);
+}
+
+/* Skills */
+
+body.light .skill-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.92),
+            rgba(248, 250, 255, 0.86)
+        );
+    border-color: rgba(31, 41, 55, 0.085);
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.045);
+}
+
+body.light .skill-card:hover {
+    border-color: rgba(109, 93, 252, 0.28);
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.085);
+}
+
+body.light .skill-icon {
+    background: rgba(109, 93, 252, 0.09);
+    color: #5f53d9;
+}
+
+body.light .foundation {
+    color: #275f9e;
+    background: rgba(59, 130, 246, 0.09);
+}
+
+body.light .learning {
+    color: #6846c7;
+    background: rgba(124, 108, 255, 0.09);
+}
+
+body.light .basic {
+    color: #16775a;
+    background: rgba(21, 157, 114, 0.085);
+}
+
+body.light .tool {
+    color: #475467;
+    background: rgba(100, 116, 139, 0.075);
+}
+
+/* Projects */
+
+body.light .project-card {
+    background:
+        linear-gradient(
+            155deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(249, 251, 255, 0.90)
+        );
+    border-color: rgba(31, 41, 55, 0.09);
+    box-shadow: 0 12px 34px rgba(15, 23, 42, 0.05);
+}
+
+body.light .project-card:hover {
+    border-color: rgba(109, 93, 252, 0.26);
+    box-shadow: 0 22px 52px rgba(15, 23, 42, 0.10);
+}
+
+body.light .project-image {
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(109, 93, 252, 0.07),
+            transparent 42%
+        ),
+        linear-gradient(
+            145deg,
+            #edf2f8,
+            #fbfcff
+        );
+    border-bottom: 1px solid rgba(31, 41, 55, 0.055);
+}
+
+body.light .project-status {
+    background: rgba(17, 24, 39, 0.86);
+    color: #ffffff;
+    box-shadow: 0 6px 18px rgba(15, 23, 42, 0.13);
+}
+
+body.light .project-number {
+    color: #6255db;
+}
+
+body.light .project-content p {
+    color: #667085;
+}
+
+body.light .project-footer {
+    color: #475467;
+}
+
+/* Education */
+
+body.light .education-card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.93),
+            rgba(248, 250, 255, 0.86)
+        );
+    border-color: rgba(31, 41, 55, 0.09);
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.05);
+}
+
+body.light .education-date {
+    color: #5f53d9;
+}
+
+body.light .degree-label {
+    color: #3974c8;
+}
+
+body.light .education-main h4 {
+    color: #475467;
+}
+
+body.light .education-main > p {
+    color: #667085;
+}
+
+body.light .cgpa {
+    color: #16775a !important;
+}
+
+/* Contact */
+
+body.light .contact-card {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(109, 93, 252, 0.055),
+            rgba(22, 138, 203, 0.025),
+            rgba(255, 255, 255, 0.56)
+        );
+    border-color: rgba(31, 41, 55, 0.09);
+    box-shadow: 0 18px 46px rgba(15, 23, 42, 0.055);
+}
+
+body.light .contact-details a,
+body.light .contact-form {
+    background: rgba(255, 255, 255, 0.84);
+    border-color: rgba(31, 41, 55, 0.09);
+    box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
+}
+
+body.light .contact-details a:hover {
+    border-color: rgba(109, 93, 252, 0.26);
+    background: #ffffff;
+}
+
+body.light .input-group input,
+body.light .input-group textarea {
+    background: #f8faff;
+    border-color: rgba(31, 41, 55, 0.11);
+    color: #101828;
+}
+
+body.light .input-group input::placeholder,
+body.light .input-group textarea::placeholder {
+    color: #98a2b3;
+}
+
+body.light .input-group input:focus,
+body.light .input-group textarea:focus {
+    background: #ffffff;
+    border-color: rgba(109, 93, 252, 0.52);
+    box-shadow: 0 0 0 3px rgba(109, 93, 252, 0.09);
+}
+
+/* Footer */
+
+body.light .footer {
+    border-color: rgba(31, 41, 55, 0.085);
+}
+
+body.light .footer-links a:hover {
+    color: #3974c8;
+}
+
+/* Project action buttons */
+
+body.light .project-actions .project-btn {
+    background: rgba(255, 255, 255, 0.90);
+    border-color: rgba(109, 93, 252, 0.20);
+    color: #273245;
+    box-shadow: 0 7px 18px rgba(15, 23, 42, 0.05);
+}
+
+body.light .project-actions .github-btn:hover {
+    background: rgba(109, 93, 252, 0.07);
+    border-color: rgba(109, 93, 252, 0.36);
+    color: #4438bf;
+}
+
+body.light .project-actions .download-btn,
+body.light .project-actions .live-btn {
+    color: #ffffff;
+    border-color: transparent;
+    background:
+        linear-gradient(
+            135deg,
+            #6d5dfc,
+            #2f8bd3
+        );
+    box-shadow: 0 10px 24px rgba(91, 77, 241, 0.18);
+}
+
+body.light .project-actions .download-btn:hover,
+body.light .project-actions .live-btn:hover {
+    box-shadow: 0 14px 30px rgba(91, 77, 241, 0.25);
+}
+
+/* Mobile-only light polish without changing the layout */
+
+@media (max-width: 960px) {
+    body.light .nav {
+        background: rgba(248, 250, 255, 0.97);
+        border-color: rgba(31, 41, 55, 0.09);
+        box-shadow: 0 18px 44px rgba(15, 23, 42, 0.09);
+        backdrop-filter: blur(20px);
+    }
+}
+
+@media (max-width: 700px) {
+    body.light .profile-card {
+        background: transparent;
+        box-shadow: none;
+    }
+
+    body.light .profile-stats {
+        background: rgba(255, 255, 255, 0.84);
+        border-color: rgba(31, 41, 55, 0.09);
+        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
+    }
+
+    body.light .photo-ring {
+        box-shadow: 0 0 24px rgba(109, 93, 252, 0.18);
+    }
+
+    body.light .skill-card,
+    body.light .project-card,
+    body.light .education-card {
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.045);
+    }
+
+    body.light .contact-form {
+        background: transparent;
+        box-shadow: none;
+    }
+
+    body.light .project-actions .project-btn {
+        box-shadow: none;
+    }
+}
+
