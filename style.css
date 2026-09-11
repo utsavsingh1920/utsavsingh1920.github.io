@@ -2331,3 +2331,168 @@ body.light .project-image {
     .skill-card { padding: 7px 6px; }
     .project-content h3 { font-size: 10px; }
 }
+
+
+/* =========================================================
+   SONEXA PROJECT ACTION BUTTONS
+   Works with the updated SONEXA HTML:
+   .project-actions > .btn
+========================================================= */
+
+.project-actions {
+    margin-top: 22px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 11px;
+}
+
+.project-actions .btn {
+    width: 100%;
+    min-height: 45px;
+
+    padding: 0 14px;
+
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-actions .btn-primary {
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            #4f8cff
+        );
+
+    box-shadow:
+        0 12px 28px
+        rgba(124, 108, 255, 0.20);
+}
+
+.project-actions .btn-secondary {
+    color: var(--text);
+
+    background:
+        rgba(124, 108, 255, 0.06);
+
+    border-color:
+        var(--border-bright);
+}
+
+.project-actions .btn:hover {
+    transform: translateY(-2px);
+}
+
+.project-actions .btn-primary:hover {
+    box-shadow:
+        0 16px 34px
+        rgba(124, 108, 255, 0.30);
+}
+
+.project-actions .btn-secondary:hover {
+    background:
+        rgba(124, 108, 255, 0.12);
+
+    border-color:
+        var(--primary-light);
+}
+
+
+/* Light theme */
+
+body.light .project-actions .btn-secondary {
+    background:
+        rgba(124, 108, 255, 0.055);
+}
+
+
+/* Tablet / normal mobile */
+
+@media (max-width: 960px) {
+
+    .project-actions {
+        gap: 10px;
+    }
+
+}
+
+
+/* Compact phone layout used by this portfolio */
+
+@media (max-width: 700px) {
+
+    .project-actions {
+        margin-top: 8px;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 5px;
+    }
+
+    .project-actions .btn {
+        min-height: 27px;
+
+        padding: 0 5px;
+
+        gap: 3px;
+
+        border-radius: 6px;
+
+        font-size: 6.2px;
+        line-height: 1;
+
+        box-shadow: none;
+    }
+
+    .project-actions .btn:hover {
+        transform: none;
+    }
+
+}
+
+
+/* Very small phones */
+
+@media (max-width: 390px) {
+
+    .project-actions {
+        gap: 4px;
+    }
+
+    .project-actions .btn {
+        min-height: 25px;
+
+        padding: 0 4px;
+
+        font-size: 5.7px;
+    }
+
+}
+
+
+/* Ultra-narrow fallback */
+
+@media (max-width: 330px) {
+
+    .project-actions {
+        grid-template-columns: 1fr;
+    }
+
+}

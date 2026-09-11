@@ -654,6 +654,75 @@ document
 
 
 /* =========================================================
+   PROJECT ACTION BUTTON SAFETY
+   SONEXA GitHub + APK
+========================================================= */
+
+document
+    .querySelectorAll(".project-actions a")
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            event => {
+
+                /*
+                    Prevent project-card click events
+                    from interfering with these buttons.
+                */
+
+                event.stopPropagation();
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   SONEXA APK DOWNLOAD ACCESSIBILITY
+========================================================= */
+
+const sonexaApkLink =
+    document.querySelector(
+        '.project-actions a[href*="SONEXA-v1.0.0.apk"]'
+    );
+
+
+if (sonexaApkLink) {
+
+    sonexaApkLink.setAttribute(
+        "title",
+        "Download SONEXA v1.0.0 Android APK"
+    );
+
+}
+
+
+/* =========================================================
+   PROJECT EXTERNAL LINK SECURITY
+========================================================= */
+
+document
+    .querySelectorAll(".project-actions a")
+    .forEach(link => {
+
+        if (
+            link.hostname &&
+            link.hostname !== window.location.hostname
+        ) {
+
+            link.setAttribute(
+                "rel",
+                "noopener noreferrer"
+            );
+
+        }
+
+    });
+
+
+/* =========================================================
    INITIALIZE
 ========================================================= */
 
