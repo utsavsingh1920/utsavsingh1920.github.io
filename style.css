@@ -2424,13 +2424,13 @@ body.light .project-image {
     background:
         linear-gradient(
             135deg,
-            #7c3cff,
-            #5b5cff
+            var(--primary),
+            var(--secondary)
         );
 
     box-shadow:
         0 10px 24px
-        rgba(124, 60, 255, .25);
+        rgba(124, 108, 255, .24);
 }
 
 
@@ -2440,32 +2440,37 @@ body.light .project-image {
 
     box-shadow:
         0 14px 30px
-        rgba(124, 60, 255, .35);
+        rgba(124, 108, 255, .34);
 }
 
 
 /* AI Resume Analyzer Live Demo */
 
 .project-actions .live-btn {
-    color: var(--secondary);
+    color: #ffffff;
 
-    border-color:
-        rgba(56, 189, 248, .65);
+    border-color: transparent;
 
     background:
-        rgba(56, 189, 248, .04);
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    box-shadow:
+        0 10px 24px
+        rgba(124, 108, 255, .24);
 }
 
 
 .project-actions .live-btn:hover {
-    background:
-        rgba(56, 189, 248, .10);
-
-    border-color:
-        var(--secondary);
-
     transform:
         translateY(-2px);
+
+    box-shadow:
+        0 14px 30px
+        rgba(124, 108, 255, .34);
 }
 
 
@@ -2496,20 +2501,36 @@ body.light .project-actions .project-btn {
 body.light .project-actions .download-btn {
     color: #ffffff;
 
+    border-color: transparent;
+
     background:
         linear-gradient(
             135deg,
-            #7c3cff,
-            #5b5cff
+            var(--primary),
+            var(--secondary)
         );
+
+    box-shadow:
+        0 10px 24px
+        rgba(124, 108, 255, .22);
 }
 
 
 body.light .project-actions .live-btn {
-    color: #0284c7;
+    color: #ffffff;
+
+    border-color: transparent;
 
     background:
-        rgba(56, 189, 248, .06);
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    box-shadow:
+        0 10px 24px
+        rgba(124, 108, 255, .22);
 }
 
 

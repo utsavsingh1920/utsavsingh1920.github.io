@@ -34,9 +34,7 @@ window.addEventListener("load", () => {
 const yearElement = document.getElementById("currentYear");
 
 if (yearElement) {
-
     yearElement.textContent = new Date().getFullYear();
-
 }
 
 
@@ -51,13 +49,9 @@ function updateHeader() {
     if (!header) return;
 
     if (window.scrollY > 30) {
-
         header.classList.add("scrolled");
-
     } else {
-
         header.classList.remove("scrolled");
-
     }
 
 }
@@ -72,9 +66,7 @@ updateHeader();
 ========================================================= */
 
 const menuBtn = document.getElementById("menuBtn");
-
 const navMenu = document.getElementById("navMenu");
-
 
 function closeMobileMenu() {
 
@@ -173,9 +165,7 @@ if (savedTheme === "light") {
     document.body.classList.add("light");
 
     if (themeIcon) {
-
         themeIcon.textContent = "☾";
-
     }
 
 } else {
@@ -183,9 +173,7 @@ if (savedTheme === "light") {
     document.body.classList.remove("light");
 
     if (themeIcon) {
-
         themeIcon.textContent = "☀";
-
     }
 
 }
@@ -655,7 +643,7 @@ document
 
 /* =========================================================
    PROJECT ACTION BUTTON SAFETY
-   SONEXA GitHub + APK
+   SONEXA + AI RESUME ANALYZER
 ========================================================= */
 
 document
@@ -668,7 +656,7 @@ document
 
                 /*
                     Prevent project-card click events
-                    from interfering with these buttons.
+                    from interfering with project buttons.
                 */
 
                 event.stopPropagation();
@@ -694,6 +682,24 @@ if (sonexaApkLink) {
     sonexaApkLink.setAttribute(
         "title",
         "Download SONEXA v1.0.0 Android APK"
+    );
+
+}
+
+
+/* =========================================================
+   AI RESUME ANALYZER LIVE DEMO ACCESSIBILITY
+========================================================= */
+
+const resumeLiveDemo =
+    document.getElementById("resumeLiveDemo");
+
+
+if (resumeLiveDemo) {
+
+    resumeLiveDemo.setAttribute(
+        "title",
+        "Open AI Resume Analyzer Live Demo"
     );
 
 }
