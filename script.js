@@ -1,22 +1,25 @@
-/* PAGE LOADER */
+/* =========================================================
+   UTSAV SINGH PORTFOLIO
+   FINAL script.js
+========================================================= */
+
+
+/* =========================================================
+   PAGE LOADER
+========================================================= */
 
 window.addEventListener("load", () => {
 
-    const loader =
-        document.getElementById("pageLoader");
+    const loader = document.getElementById("pageLoader");
 
     if (!loader) return;
-
 
     setTimeout(() => {
 
         loader.classList.add("hide");
 
-
         setTimeout(() => {
-
             loader.remove();
-
         }, 400);
 
     }, 450);
@@ -24,30 +27,28 @@ window.addEventListener("load", () => {
 });
 
 
-/* CURRENT YEAR */
+/* =========================================================
+   CURRENT YEAR
+========================================================= */
 
-const yearElement =
-    document.getElementById("currentYear");
-
+const yearElement = document.getElementById("currentYear");
 
 if (yearElement) {
 
-    yearElement.textContent =
-        new Date().getFullYear();
+    yearElement.textContent = new Date().getFullYear();
 
 }
 
 
-/* HEADER SCROLL */
+/* =========================================================
+   HEADER SCROLL EFFECT
+========================================================= */
 
-const header =
-    document.getElementById("header");
-
+const header = document.getElementById("header");
 
 function updateHeader() {
 
     if (!header) return;
-
 
     if (window.scrollY > 30) {
 
@@ -61,30 +62,23 @@ function updateHeader() {
 
 }
 
-
-window.addEventListener(
-    "scroll",
-    updateHeader
-);
-
+window.addEventListener("scroll", updateHeader);
 
 updateHeader();
 
 
-/* MOBILE MENU */
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
-const menuBtn =
-    document.getElementById("menuBtn");
+const menuBtn = document.getElementById("menuBtn");
 
-
-const navMenu =
-    document.getElementById("navMenu");
+const navMenu = document.getElementById("navMenu");
 
 
 function closeMobileMenu() {
 
     if (!navMenu || !menuBtn) return;
-
 
     navMenu.classList.remove("open");
 
@@ -100,33 +94,26 @@ function closeMobileMenu() {
 
 if (menuBtn && navMenu) {
 
-    menuBtn.addEventListener(
-        "click",
-        event => {
+    menuBtn.addEventListener("click", event => {
 
-            event.stopPropagation();
+        event.stopPropagation();
 
+        navMenu.classList.toggle("open");
 
-            navMenu.classList.toggle("open");
+        const isOpen =
+            navMenu.classList.contains("open");
 
+        menuBtn.textContent =
+            isOpen ? "✕" : "☰";
 
-            const isOpen =
-                navMenu.classList.contains("open");
+        menuBtn.setAttribute(
+            "aria-label",
+            isOpen
+                ? "Close navigation"
+                : "Open navigation"
+        );
 
-
-            menuBtn.textContent =
-                isOpen ? "✕" : "☰";
-
-
-            menuBtn.setAttribute(
-                "aria-label",
-                isOpen
-                    ? "Close navigation"
-                    : "Open navigation"
-            );
-
-        }
-    );
+    });
 
 
     navMenu
@@ -143,35 +130,33 @@ if (menuBtn && navMenu) {
 }
 
 
-/* CLOSE MENU OUTSIDE */
+/* =========================================================
+   CLOSE MOBILE MENU WHEN CLICKING OUTSIDE
+========================================================= */
 
-document.addEventListener(
-    "click",
-    event => {
+document.addEventListener("click", event => {
 
-        if (!navMenu || !menuBtn)
-            return;
+    if (!navMenu || !menuBtn) return;
 
+    if (
+        navMenu.classList.contains("open") &&
+        !navMenu.contains(event.target) &&
+        !menuBtn.contains(event.target)
+    ) {
 
-        if (
-            navMenu.classList.contains("open") &&
-            !navMenu.contains(event.target) &&
-            !menuBtn.contains(event.target)
-        ) {
-
-            closeMobileMenu();
-
-        }
+        closeMobileMenu();
 
     }
-);
+
+});
 
 
-/* THEME */
+/* =========================================================
+   DARK / LIGHT THEME
+========================================================= */
 
 const themeButton =
     document.getElementById("themeToggle");
-
 
 const themeIcon =
     document.getElementById("themeIcon");
@@ -195,6 +180,8 @@ if (savedTheme === "light") {
 
 } else {
 
+    document.body.classList.remove("light");
+
     if (themeIcon) {
 
         themeIcon.textContent = "☀";
@@ -210,18 +197,15 @@ themeButton?.addEventListener(
 
         document.body.classList.toggle("light");
 
-
         const isLight =
             document.body
                 .classList
                 .contains("light");
 
-
         localStorage.setItem(
             "utsav-portfolio-theme",
             isLight ? "light" : "dark"
         );
-
 
         if (themeIcon) {
 
@@ -234,13 +218,14 @@ themeButton?.addEventListener(
 );
 
 
-/* ACTIVE NAVIGATION */
+/* =========================================================
+   ACTIVE NAVIGATION LINK
+========================================================= */
 
 const sections =
     document.querySelectorAll(
         "main section[id]"
     );
-
 
 const navLinks =
     document.querySelectorAll(
@@ -250,9 +235,7 @@ const navLinks =
 
 function updateNavigation() {
 
-    let currentSection =
-        "home";
-
+    let currentSection = "home";
 
     const position =
         window.scrollY + 190;
@@ -263,10 +246,8 @@ function updateNavigation() {
         const top =
             section.offsetTop;
 
-
         const height =
             section.offsetHeight;
-
 
         if (
             position >= top &&
@@ -285,10 +266,8 @@ function updateNavigation() {
 
         link.classList.remove("active");
 
-
         if (
-            link.getAttribute("href")
-            ===
+            link.getAttribute("href") ===
             `#${currentSection}`
         ) {
 
@@ -306,14 +285,15 @@ window.addEventListener(
     updateNavigation
 );
 
-
 window.addEventListener(
     "load",
     updateNavigation
 );
 
 
-/* SMOOTH LINKS */
+/* =========================================================
+   SMOOTH SCROLL
+========================================================= */
 
 document
     .querySelectorAll('a[href^="#"]')
@@ -325,7 +305,6 @@ document
 
                 const href =
                     link.getAttribute("href");
-
 
                 if (
                     !href ||
@@ -361,18 +340,15 @@ document
     });
 
 
-/* CONTACT FORM */
+/* =========================================================
+   CONTACT FORM
+========================================================= */
 
 const contactForm =
-    document.getElementById(
-        "contactForm"
-    );
-
+    document.getElementById("contactForm");
 
 const formMessage =
-    document.getElementById(
-        "formMsg"
-    );
+    document.getElementById("formMsg");
 
 
 if (contactForm) {
@@ -405,24 +381,30 @@ if (contactForm) {
                     .trim();
 
 
+            /* EMPTY FIELD CHECK */
+
             if (
                 !name ||
                 !email ||
                 !message
             ) {
 
-                formMessage.textContent =
-                    "Please complete all fields.";
+                if (formMessage) {
 
+                    formMessage.textContent =
+                        "Please complete all fields.";
 
-                formMessage.style.color =
-                    "#ff6b6b";
+                    formMessage.style.color =
+                        "#ff6b6b";
 
+                }
 
                 return;
 
             }
 
+
+            /* EMAIL VALIDATION */
 
             const emailPattern =
                 /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -432,24 +414,30 @@ if (contactForm) {
                 !emailPattern.test(email)
             ) {
 
-                formMessage.textContent =
-                    "Please enter a valid email.";
+                if (formMessage) {
 
+                    formMessage.textContent =
+                        "Please enter a valid email.";
 
-                formMessage.style.color =
-                    "#ff6b6b";
+                    formMessage.style.color =
+                        "#ff6b6b";
 
+                }
 
                 return;
 
             }
 
 
+            /* EMAIL SUBJECT */
+
             const subject =
                 encodeURIComponent(
                     `Portfolio Contact from ${name}`
                 );
 
+
+            /* EMAIL BODY */
 
             const body =
                 encodeURIComponent(
@@ -466,20 +454,29 @@ ${name}`
                 );
 
 
+            /* MAILTO LINK */
+
             const mailtoLink =
                 `mailto:singhutsav0007@gmail.com?subject=${subject}&body=${body}`;
 
 
-            formMessage.textContent =
-                "Opening your email application...";
+            if (formMessage) {
+
+                formMessage.textContent =
+                    "Opening your email application...";
+
+                formMessage.style.color =
+                    "#34d399";
+
+            }
 
 
-            formMessage.style.color =
-                "#34d399";
+            setTimeout(() => {
 
+                window.location.href =
+                    mailtoLink;
 
-            window.location.href =
-                mailtoLink;
+            }, 250);
 
         }
     );
@@ -487,7 +484,9 @@ ${name}`
 }
 
 
-/* ESCAPE KEY */
+/* =========================================================
+   ESC KEY CLOSE MENU
+========================================================= */
 
 document.addEventListener(
     "keydown",
@@ -505,7 +504,9 @@ document.addEventListener(
 );
 
 
-/* RESPONSIVE MENU RESET */
+/* =========================================================
+   RESPONSIVE MENU RESET
+========================================================= */
 
 window.addEventListener(
     "resize",
@@ -523,7 +524,9 @@ window.addEventListener(
 );
 
 
-/* EXTERNAL LINK SECURITY */
+/* =========================================================
+   EXTERNAL LINK SECURITY
+========================================================= */
 
 document
     .querySelectorAll(
@@ -537,3 +540,130 @@ document
         );
 
     });
+
+
+/* =========================================================
+   PROJECT IMAGE LOADING SAFETY
+========================================================= */
+
+document
+    .querySelectorAll(".project-image img")
+    .forEach(image => {
+
+        image.addEventListener(
+            "error",
+            () => {
+
+                image.style.opacity = "0";
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   PROFILE IMAGE LOADING SAFETY
+========================================================= */
+
+const profileImage =
+    document.querySelector(
+        ".photo-ring img"
+    );
+
+
+if (profileImage) {
+
+    profileImage.addEventListener(
+        "error",
+        () => {
+
+            profileImage.alt =
+                "Utsav Singh Profile";
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   BUTTON TAP EFFECT FOR MOBILE
+========================================================= */
+
+document
+    .querySelectorAll(
+        ".btn, .icon-btn, .project-card, .skill-card"
+    )
+    .forEach(element => {
+
+        element.addEventListener(
+            "touchstart",
+            () => {
+
+                element.classList.add(
+                    "touch-active"
+                );
+
+            },
+            {
+                passive: true
+            }
+        );
+
+
+        element.addEventListener(
+            "touchend",
+            () => {
+
+                setTimeout(() => {
+
+                    element.classList.remove(
+                        "touch-active"
+                    );
+
+                }, 150);
+
+            },
+            {
+                passive: true
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   PREVENT EMPTY LINKS
+========================================================= */
+
+document
+    .querySelectorAll('a[href=""]')
+    .forEach(link => {
+
+        link.addEventListener(
+            "click",
+            event => {
+
+                event.preventDefault();
+
+            }
+        );
+
+    });
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        updateHeader();
+
+        updateNavigation();
+
+    }
+);

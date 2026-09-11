@@ -1794,3 +1794,540 @@ body.light .project-image {
     }
 
 }
+
+/* =========================================================
+   FINAL MOBILE HERO + HEADER OPTIMIZATION
+   Desktop design remains unchanged.
+========================================================= */
+
+@media (max-width: 700px) {
+
+    html {
+        scroll-padding-top: 70px;
+    }
+
+    .nav-container {
+        height: 66px;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .nav-actions {
+        gap: 7px;
+    }
+
+    .icon-btn {
+        width: 37px;
+        height: 37px;
+        border-radius: 10px;
+    }
+
+    .nav {
+        top: 72px;
+        left: 14px;
+        right: 14px;
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 94px 0 48px;
+        align-items: flex-start;
+    }
+
+    .hero-grid {
+        gap: 30px;
+        text-align: center;
+    }
+
+    .availability-badge {
+        max-width: 100%;
+        margin: 0 auto 16px;
+        padding: 7px 11px;
+        gap: 7px;
+        font-size: 10px;
+        line-height: 1.35;
+        white-space: normal;
+        justify-content: center;
+    }
+
+    .availability-badge span {
+        width: 7px;
+        height: 7px;
+        flex: 0 0 7px;
+    }
+
+    .hello {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .hero h1 {
+        margin-top: 3px;
+        margin-bottom: 12px;
+        font-size: clamp(42px, 13vw, 52px);
+        line-height: 0.98;
+        letter-spacing: -2px;
+    }
+
+    .hero h2 {
+        max-width: 340px;
+        margin: 0 auto 14px;
+        font-size: clamp(19px, 5.8vw, 23px);
+        line-height: 1.28;
+    }
+
+    .hero-description {
+        max-width: 360px;
+        margin-inline: auto;
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .hero-buttons {
+        margin-top: 22px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        min-height: 46px;
+        padding: 0 12px;
+        font-size: 12px;
+        border-radius: 12px;
+    }
+
+    .hero-links {
+        margin-top: 18px;
+        gap: 0;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .hero-links a {
+        padding: 0 12px;
+        font-size: 12px;
+        line-height: 1;
+        border-right: 1px solid var(--border);
+    }
+
+    .hero-links a:last-child {
+        border-right: 0;
+    }
+
+    .hero-profile {
+        width: 100%;
+    }
+
+    .profile-card {
+        width: 100%;
+        max-width: 360px;
+        margin-inline: auto;
+        padding: 20px 18px;
+        border-radius: 22px;
+    }
+
+    .photo-ring {
+        width: 96px;
+        height: 96px;
+        margin-bottom: 12px;
+    }
+
+    .profile-card h3 {
+        font-size: 20px;
+    }
+
+    .profile-position {
+        margin-top: 1px;
+        font-size: 12px;
+    }
+
+    .location {
+        margin-top: 2px;
+        font-size: 11px;
+    }
+
+    .profile-skills {
+        margin-top: 14px;
+        gap: 6px;
+    }
+
+    .profile-skills span {
+        padding: 5px 9px;
+        font-size: 9px;
+    }
+
+    .profile-stats {
+        margin-top: 16px;
+        padding-top: 14px;
+    }
+
+    .profile-stats strong {
+        font-size: 17px;
+    }
+
+    .profile-contact {
+        min-height: 42px;
+        margin-top: 15px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .container {
+        width: calc(100% - 24px);
+    }
+
+    .hero {
+        padding-top: 86px;
+        padding-bottom: 44px;
+    }
+
+    .availability-badge {
+        width: fit-content;
+        max-width: 330px;
+        font-size: 9px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero h2 {
+        font-size: 19px;
+    }
+
+    .hero-description {
+        font-size: 12.5px;
+        line-height: 1.6;
+    }
+
+    /* Keep both main actions side-by-side on mobile */
+    .hero-buttons {
+        flex-direction: initial;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        min-height: 44px;
+        font-size: 11.5px;
+    }
+
+    .hero-links a {
+        padding: 0 9px;
+        font-size: 11px;
+    }
+
+    .profile-card {
+        padding: 18px 15px;
+    }
+
+    .photo-ring {
+        width: 88px;
+        height: 88px;
+    }
+
+    .profile-skills {
+        display: none;
+    }
+
+    .profile-stats {
+        margin-top: 13px;
+    }
+
+    .profile-contact {
+        margin-top: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .icon-btn {
+        width: 35px;
+        height: 35px;
+    }
+
+    .hero-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-links a {
+        padding: 0 7px;
+        font-size: 10.5px;
+    }
+}
+
+/* =========================================================
+   REFERENCE-MATCH MOBILE LAYOUT
+   Keeps the phone view dense like the supplied screenshot.
+   Desktop/tablet rules above remain intact.
+========================================================= */
+@media (max-width: 700px) {
+    :root { --radius: 14px; }
+
+    body { line-height: 1.45; }
+    .container { width: calc(100% - 30px); }
+    .section { padding: 26px 0; }
+    .section-heading { margin-bottom: 14px; }
+    .section-heading.center { text-align: left; margin-inline: 0; }
+    .section-tag { font-size: 8px; margin-bottom: 3px; letter-spacing: .14em; }
+    .section-heading h2, .contact-left h2 {
+        font-size: 24px;
+        line-height: 1.05;
+        letter-spacing: -1.2px;
+    }
+    .section-description { margin-top: 0; font-size: 9px; line-height: 1.35; }
+
+    /* Header */
+    .nav-container { height: 58px; }
+    .logo { font-size: 22px; }
+    .resume-btn { display: none; }
+    .icon-btn { width: 37px; height: 37px; font-size: 15px; }
+    .nav { top: 64px; left: 15px; right: 15px; }
+
+    /* Hero: preserve two columns on phone */
+    .hero { min-height: auto; padding: 76px 0 20px; display: block; }
+    .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(118px, .65fr);
+        gap: 14px;
+        align-items: start;
+        text-align: left;
+    }
+    .hero-content { min-width: 0; }
+    .availability-badge {
+        margin: 0 0 12px;
+        padding: 5px 8px;
+        font-size: 8px;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+    .availability-badge span { width: 6px; height: 6px; flex: 0 0 6px; }
+    .hello { font-size: 12px; }
+    .hero h1 {
+        margin: 2px 0 7px;
+        font-size: clamp(33px, 9.8vw, 43px);
+        line-height: .96;
+        letter-spacing: -2.2px;
+    }
+    .hero h2 {
+        max-width: none;
+        margin: 0 0 7px;
+        font-size: clamp(15px, 4.2vw, 18px);
+        line-height: 1.08;
+    }
+    .hero-description {
+        max-width: none;
+        margin: 0;
+        font-size: 9.5px;
+        line-height: 1.45;
+    }
+    .hero-buttons {
+        margin-top: 12px;
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: 7px;
+    }
+    .hero-buttons .btn {
+        min-height: 34px;
+        padding: 0 8px;
+        border-radius: 8px;
+        font-size: 9px;
+    }
+    .hero-links {
+        margin-top: 10px;
+        justify-content: flex-start;
+        gap: 14px;
+        flex-wrap: nowrap;
+    }
+    .hero-links a {
+        padding: 0;
+        border: 0;
+        font-size: 9px;
+        font-weight: 700;
+    }
+
+    /* Right profile area */
+    .hero-profile { width: 100%; padding-top: 34px; }
+    .profile-card {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        text-align: center;
+    }
+    body.light .profile-card { background: transparent; }
+    .photo-ring {
+        width: min(126px, 31vw);
+        height: min(126px, 31vw);
+        margin: 0 auto 10px;
+        padding: 3px;
+        box-shadow: 0 0 24px rgba(124,108,255,.28);
+    }
+    .photo-ring img { border-width: 4px; }
+    .profile-card h3, .profile-position, .location, .profile-skills, .profile-contact { display: none; }
+    .profile-stats {
+        margin-top: 0;
+        padding: 9px 0 0;
+        grid-template-columns: 1fr 1fr;
+        border: 1px solid var(--border);
+        border-radius: 11px;
+        overflow: hidden;
+        background: rgba(10, 15, 27, .72);
+    }
+    .profile-stats div { padding: 0 3px 8px; }
+    .profile-stats strong { font-size: 14px; }
+    .profile-stats span { font-size: 7px; }
+    .profile-stats::after {
+        content: "⌖  Mumbai, Maharashtra";
+        grid-column: 1 / -1;
+        display: block;
+        padding: 7px 4px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 7px;
+        text-align: center;
+    }
+
+    /* About */
+    .about-grid {
+        grid-template-columns: 1.25fr .75fr;
+        gap: 18px;
+        align-items: start;
+    }
+    .about-text .large-text { display: none; }
+    .about-text p { margin-bottom: 0; font-size: 10px; line-height: 1.5; }
+    .about-details { border-radius: 12px; }
+    .detail-row {
+        padding: 7px 8px;
+        display: block;
+        font-size: 7.5px;
+        line-height: 1.3;
+    }
+    .detail-row span { display: block; font-size: 6.5px; }
+    .detail-row strong { display: block; margin-top: 1px; text-align: left; font-size: 7.5px; }
+
+    /* Skills: 4 across like reference */
+    .skills-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; }
+    .skill-card {
+        min-height: 88px;
+        padding: 8px;
+        border-radius: 10px;
+    }
+    .skill-top { margin-bottom: 6px; }
+    .skill-icon {
+        min-width: 24px;
+        height: 24px;
+        padding: 0 4px;
+        border-radius: 6px;
+        font-size: 6px;
+    }
+    .level { display: none; }
+    .skill-card h3 { margin-bottom: 3px; font-size: 8.5px; line-height: 1.15; }
+    .skill-card p { font-size: 6.7px; line-height: 1.35; }
+
+    /* Projects: 2 side by side */
+    .projects-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+    .project-card { border-radius: 12px; }
+    .project-image { min-height: 118px; height: 118px; padding: 7px; }
+    .project-image img { max-height: 105px; object-fit: contain; }
+    .project-status { top: 6px; right: 6px; padding: 3px 5px; font-size: 5.5px; }
+    .project-content { padding: 9px; }
+    .project-number { font-size: 6px; }
+    .project-content h3 { margin: 3px 0 5px; font-size: 11px; line-height: 1.15; }
+    .project-content p { font-size: 7px; line-height: 1.45; }
+    .tech-list { margin-top: 7px; gap: 4px; }
+    .tech-list span { padding: 3px 5px; font-size: 5.5px; }
+    .project-footer { margin-top: 7px; padding-top: 6px; gap: 4px; font-size: 5.5px; }
+
+    /* Education horizontal */
+    .education-card {
+        padding: 11px;
+        grid-template-columns: 98px 1fr;
+        gap: 12px;
+        border-radius: 12px;
+        align-items: center;
+    }
+    .education-date { font-size: 8px; }
+    .degree-label { display: none; }
+    .education-main h3 { margin-top: 0; font-size: 10px; line-height: 1.15; }
+    .education-main h4 { margin-top: 3px; font-size: 7.5px; }
+    .education-main > p { margin-top: 2px; font-size: 6.5px; line-height: 1.3; }
+    .education-tags { margin-top: 5px; gap: 4px; }
+    .education-tags span { padding: 3px 5px; font-size: 5.5px; }
+
+    /* Contact compact like reference */
+    .contact { padding-bottom: 25px; }
+    .contact-card {
+        padding: 11px;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        border-radius: 12px;
+    }
+    .contact-left > p:not(.section-tag), .contact-details { display: none; }
+    .contact-left { display: flex; align-items: end; justify-content: space-between; gap: 10px; }
+    .contact-left h2 { font-size: 22px; }
+    .contact-left::after {
+        content: "I’m always open to discussing opportunities, collaborations or just a tech chat.";
+        max-width: 45%;
+        color: var(--muted);
+        font-size: 6.7px;
+        line-height: 1.35;
+        text-align: right;
+    }
+    .contact-form {
+        padding: 0;
+        grid-template-columns: 1fr 1fr 1.2fr;
+        gap: 6px;
+        border: 0;
+        background: transparent;
+    }
+    .input-group label { margin-bottom: 2px; font-size: 5.5px; }
+    .input-group input, .input-group textarea {
+        min-height: 34px;
+        padding: 7px 8px;
+        border-radius: 7px;
+        font-size: 6.5px;
+    }
+    .input-group textarea { height: 34px; min-height: 34px; resize: none; }
+    .submit-btn { grid-column: 1 / -1; min-height: 30px; font-size: 7px; border-radius: 7px; }
+    .form-message { grid-column: 1 / -1; min-height: 0; font-size: 6px; }
+
+    /* Footer single compact line */
+    .footer { padding: 18px 0 14px; }
+    .footer-content { flex-direction: row; text-align: left; gap: 8px; }
+    .footer-logo { font-size: 14px; }
+    .footer p { display: none; }
+    .footer-center { font-size: 5.5px; text-align: center; }
+    .footer-links { gap: 7px; }
+    .footer-links a { font-size: 5.5px; }
+    .copyright { margin-top: 8px; padding-top: 7px; font-size: 5.5px; }
+}
+
+@media (max-width: 390px) {
+    .container { width: calc(100% - 24px); }
+    .hero-grid { grid-template-columns: minmax(0, 1.3fr) minmax(108px, .7fr); gap: 10px; }
+    .hero h1 { font-size: 33px; }
+    .hero h2 { font-size: 14px; }
+    .hero-description { font-size: 8.8px; }
+    .hero-links { gap: 10px; }
+    .skills-grid { gap: 5px; }
+    .skill-card { padding: 7px 6px; }
+    .project-content h3 { font-size: 10px; }
+}
