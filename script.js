@@ -668,26 +668,6 @@ document
 
 
 /* =========================================================
-   SONEXA APK DOWNLOAD ACCESSIBILITY
-========================================================= */
-
-const sonexaApkLink =
-    document.querySelector(
-        '.project-actions a[href*="SONEXA-v1.0.0.apk"]'
-    );
-
-
-if (sonexaApkLink) {
-
-    sonexaApkLink.setAttribute(
-        "title",
-        "Download SONEXA v1.0.0 Android APK"
-    );
-
-}
-
-
-/* =========================================================
    AI RESUME ANALYZER LIVE DEMO ACCESSIBILITY
 ========================================================= */
 
