@@ -530,28 +530,21 @@ document
     });
 
 
-/* =========================================================
-   PROJECT IMAGE LOADING SAFETY
-========================================================= */
-
-document
-    .querySelectorAll(".project-image img")
-    .forEach(image => {
-
-        image.addEventListener(
-            "error",
-            () => {
-
-                image.style.opacity = "0";
-
-            }
-        );
-
+/* Project image fallback */
+document.querySelectorAll(".project-image img").forEach(img => {
+    img.addEventListener("error", () => {
+        img.style.display = "none";
+        const holder = img.parentElement;
+        if (holder && !holder.querySelector(".image-help")) {
+            const note = document.createElement("p");
+            note.className = "image-help";
+            note.textContent = "Add " + img.getAttribute("src") + " to the portfolio folder";
+            holder.appendChild(note);
+        }
     });
+});
 
-
-/* =========================================================
-   PROFILE IMAGE LOADING SAFETY
+/* PROFILE IMAGE LOADING SAFETY
 ========================================================= */
 
 const profileImage =
