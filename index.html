@@ -660,19 +660,12 @@
                                     <span>View GitHub</span>
                                 </a>
 
-                                <a href="https://github.com/utsavsingh1920/SONEXA/releases/latest/download/app-arm64-v8a-release.apk"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="project-btn download-btn"
-                                    aria-label="Download SONEXA Android APK">
-
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path fill="currentColor"
-                                            d="M14 3h7v7h-2V6.4l-8.3 8.3-1.4-1.4L17.6 5H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z" />
-                                    </svg>
-
+                                <button type="button" class="project-btn download-btn app-download-trigger"
+                                    data-app="sonexa" aria-label="Download SONEXA APK" aria-haspopup="dialog"
+                                    aria-expanded="false" aria-controls="sonexaDownloadDialog">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3" /></svg>
                                     <span>Download APK</span>
-                                </a>
+                                </button>
 
                             </div>
 
@@ -738,19 +731,12 @@
                                     <span>View GitHub</span>
                                 </a>
 
-                                <a href="https://github.com/utsavsingh1920/freegi/releases/latest/download/app-release.apk"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    class="project-btn download-btn"
-                                    aria-label="Download Freegi Android APK">
-
-                                    <svg viewBox="0 0 24 24" aria-hidden="true">
-                                        <path fill="currentColor"
-                                            d="M14 3h7v7h-2V6.4l-8.3 8.3-1.4-1.4L17.6 5H14V3ZM5 5h6v2H7v10h10v-4h2v6H5V5Z" />
-                                    </svg>
-
+                                <button type="button" class="project-btn download-btn app-download-trigger"
+                                    data-app="freegi" aria-label="Download Freegi APK" aria-haspopup="dialog"
+                                    aria-expanded="false" aria-controls="freegiDownloadDialog">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3" /></svg>
                                     <span>Download APK</span>
-                                </a>
+                                </button>
 
                             </div>
 
@@ -783,7 +769,12 @@
                             </div>
                             <div class="project-actions">
                                 <a class="project-btn github-btn" href="https://github.com/utsavsingh1920/DHANVIQ" target="_blank" rel="noopener noreferrer">View GitHub ↗</a>
-                                <a class="project-btn download-btn" href="https://github.com/utsavsingh1920/DHANVIQ/releases/latest/download/app-release.apk" aria-label="Download Dhanviq Android APK">Download APK</a>
+                                <button type="button" class="project-btn download-btn app-download-trigger"
+                                    data-app="dhanviq" aria-label="Download Dhanviq APK" aria-haspopup="dialog"
+                                    aria-expanded="false" aria-controls="dhanviqDownloadDialog">
+                                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3v11m0 0 4-4m-4 4-4-4M5 17v3h14v-3" /></svg>
+                                    <span>Download APK</span>
+                                </button>
                             </div>
                             <div class="project-footer">
                                 <span>Initial Version Completed</span><span>Flutter • Android</span>
@@ -1288,6 +1279,51 @@
 
 
     <!-- JAVASCRIPT -->
+
+    <!-- APP APK DOWNLOAD DIALOGS -->
+    <div class="app-download-backdrop" id="sonexaDownloadDialog" data-download-dialog="sonexa" hidden>
+        <section class="app-download-dialog" role="dialog" aria-modal="true" aria-labelledby="sonexaDownloadTitle">
+            <header class="app-download-header">
+                <div><span class="app-download-eyebrow">SONEXA · ANDROID</span><h3 id="sonexaDownloadTitle">Download APK</h3><p>Choose the APK that matches your Android device.</p></div>
+                <button type="button" class="app-download-close" aria-label="Close">×</button>
+            </header>
+            <p class="app-download-status" data-detection-status role="status" aria-live="polite">Checking Android device compatibility…</p>
+            <div class="app-apk-list">
+                <a class="app-apk-option" data-arch="arm64" href="https://github.com/utsavsingh1920/SONEXA/releases/latest/download/app-arm64-v8a-release.apk"><span class="app-apk-icon">64</span><span class="app-apk-copy"><strong>ARM64 · 64-bit Android</strong><small>Most modern Android phones · 82 MB</small></span><span class="app-apk-arrow">↓</span></a>
+                <a class="app-apk-option" data-arch="arm32" href="https://github.com/utsavsingh1920/SONEXA/releases/latest/download/app-armeabi-v7a-release.apk"><span class="app-apk-icon">32</span><span class="app-apk-copy"><strong>ARM32 · 32-bit Android</strong><small>Some older Android phones · 80 MB</small></span><span class="app-apk-arrow">↓</span></a>
+                <a class="app-apk-option" data-arch="x86_64" href="https://github.com/utsavsingh1920/SONEXA/releases/latest/download/app-x86_64-release.apk"><span class="app-apk-icon">x86</span><span class="app-apk-copy"><strong>x86_64 · Intel Android</strong><small>Some emulators and Intel-based devices · 83 MB</small></span><span class="app-apk-arrow">↓</span></a>
+            </div>
+            <p class="app-download-note">If your device cannot be identified, choose manually or <a href="https://github.com/utsavsingh1920/SONEXA/releases/latest" target="_blank" rel="noopener noreferrer">view all release files</a>.</p>
+        </section>
+    </div>
+
+    <div class="app-download-backdrop" id="freegiDownloadDialog" data-download-dialog="freegi" hidden>
+        <section class="app-download-dialog" role="dialog" aria-modal="true" aria-labelledby="freegiDownloadTitle">
+            <header class="app-download-header">
+                <div><span class="app-download-eyebrow">FREEGI · ANDROID</span><h3 id="freegiDownloadTitle">Download APK</h3><p>Get the latest Android release.</p></div>
+                <button type="button" class="app-download-close" aria-label="Close">×</button>
+            </header>
+            <p class="app-download-status">Freegi release currently provides one APK file. Tap below to download it.</p>
+            <div class="app-apk-list">
+                <a class="app-apk-option app-single-apk" href="https://github.com/utsavsingh1920/freegi/releases/latest/download/app-release.apk"><span class="app-apk-icon">APK</span><span class="app-apk-copy"><strong>Freegi · Android APK</strong><small>Latest release · app-release.apk</small></span><span class="app-apk-arrow">↓</span></a>
+            </div>
+            <p class="app-download-note">If the download does not start, <a href="https://github.com/utsavsingh1920/freegi/releases/latest" target="_blank" rel="noopener noreferrer">open Freegi releases</a> and choose the APK asset.</p>
+        </section>
+    </div>
+
+    <div class="app-download-backdrop" id="dhanviqDownloadDialog" data-download-dialog="dhanviq" hidden>
+        <section class="app-download-dialog" role="dialog" aria-modal="true" aria-labelledby="dhanviqDownloadTitle">
+            <header class="app-download-header">
+                <div><span class="app-download-eyebrow">DHANVIQ · ANDROID</span><h3 id="dhanviqDownloadTitle">Download APK</h3><p>Get the latest Android release.</p></div>
+                <button type="button" class="app-download-close" aria-label="Close">×</button>
+            </header>
+            <p class="app-download-status">Dhanviq release currently provides one APK file. Tap below to download it.</p>
+            <div class="app-apk-list">
+                <a class="app-apk-option app-single-apk" href="https://github.com/utsavsingh1920/DHANVIQ/releases/latest/download/app-release.apk"><span class="app-apk-icon">APK</span><span class="app-apk-copy"><strong>Dhanviq · Android APK</strong><small>Latest release · app-release.apk</small></span><span class="app-apk-arrow">↓</span></a>
+            </div>
+            <p class="app-download-note">If the download does not start, <a href="https://github.com/utsavsingh1920/DHANVIQ/releases/latest" target="_blank" rel="noopener noreferrer">open Dhanviq releases</a> and choose the APK asset.</p>
+        </section>
+    </div>
 
     <script src="script.js"></script>
 

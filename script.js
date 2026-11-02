@@ -715,3 +715,100 @@ document.addEventListener(
 
     }
 );
+
+
+/* =========================================================
+   APK DOWNLOAD DIALOGS — SONEXA, FREEGI AND DHANVIQ
+========================================================= */
+(() => {
+    const triggers = document.querySelectorAll(".app-download-trigger");
+    const dialogs = document.querySelectorAll("[data-download-dialog]");
+    let activeTrigger = null;
+
+    const closeDialog = (dialog) => {
+        if (!dialog) return;
+        dialog.hidden = true;
+        document.body.classList.remove("app-download-open");
+        if (activeTrigger) {
+            activeTrigger.setAttribute("aria-expanded", "false");
+            activeTrigger.focus();
+        }
+        activeTrigger = null;
+    };
+
+    const detectSonexa = async (dialog) => {
+        const status = dialog.querySelector("[data-detection-status]");
+        if (!status || status.dataset.checked === "true") return;
+        status.dataset.checked = "true";
+
+        // Never use a Windows/macOS/Linux CPU architecture to recommend an Android APK.
+        if (!/Android/i.test(navigator.userAgent)) {
+            status.textContent = "You are viewing this on a computer. Open this page on your Android phone for a device suggestion, or choose an APK manually.";
+            return;
+        }
+
+        const uaData = navigator.userAgentData;
+        if (!uaData || typeof uaData.getHighEntropyValues !== "function") {
+            status.textContent = "Android detected, but this browser does not share the CPU type. Please choose your APK manually.";
+            return;
+        }
+
+        try {
+            const details = await uaData.getHighEntropyValues(["architecture", "bitness"]);
+            const arch = String(details.architecture || "").toLowerCase();
+            const bits = String(details.bitness || "");
+            let match = null;
+            if (arch === "arm" && bits === "64") match = "arm64";
+            else if (arch === "arm" && bits === "32") match = "arm32";
+            else if ((arch === "x86" || arch === "x86_64") && bits === "64") match = "x86_64";
+
+            if (!match) {
+                status.textContent = "Android detected, but the browser could not confirm the CPU architecture. Please choose manually.";
+                return;
+            }
+
+            const option = dialog.querySelector(`[data-arch="${match}"]`);
+            if (option) {
+                option.classList.add("is-recommended");
+                const copy = option.querySelector(".app-apk-copy");
+                if (copy && !copy.querySelector(".app-recommended-label")) {
+                    const label = document.createElement("em");
+                    label.className = "app-recommended-label";
+                    label.textContent = "Suggested for this device";
+                    copy.appendChild(label);
+                }
+                status.textContent = "Your Android device appears compatible with the highlighted APK. Tap it to download.";
+            }
+        } catch (error) {
+            status.textContent = "Automatic detection is unavailable. Please choose your APK manually.";
+        }
+    };
+
+    triggers.forEach((trigger) => {
+        trigger.addEventListener("click", () => {
+            const dialog = document.getElementById(`${trigger.dataset.app}DownloadDialog`);
+            if (!dialog) return;
+            activeTrigger = trigger;
+            dialog.hidden = false;
+            document.body.classList.add("app-download-open");
+            trigger.setAttribute("aria-expanded", "true");
+            const closeButton = dialog.querySelector(".app-download-close");
+            if (closeButton) closeButton.focus();
+            if (trigger.dataset.app === "sonexa") detectSonexa(dialog);
+        });
+    });
+
+    dialogs.forEach((dialog) => {
+        const closeButton = dialog.querySelector(".app-download-close");
+        if (closeButton) closeButton.addEventListener("click", () => closeDialog(dialog));
+        dialog.addEventListener("click", (event) => {
+            if (event.target === dialog) closeDialog(dialog);
+        });
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        const openDialog = document.querySelector('[data-download-dialog]:not([hidden])');
+        if (openDialog) closeDialog(openDialog);
+    });
+})();
