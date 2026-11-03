@@ -4771,3 +4771,578 @@ body.light .input-group textarea {
         padding-top: 18px;
     }
 }
+
+@media (max-width: 700px) {
+    :root { --radius: 14px; }
+
+    body { line-height: 1.45; }
+    .container { width: calc(100% - 30px); }
+    .section { padding: 26px 0; }
+    .section-heading { margin-bottom: 14px; }
+    .section-heading.center { text-align: left; margin-inline: 0; }
+    .section-tag { font-size: 8px; margin-bottom: 3px; letter-spacing: .14em; }
+    .section-heading h2, .contact-left h2 {
+        font-size: 24px;
+        line-height: 1.05;
+        letter-spacing: -1.2px;
+    }
+    .section-description { margin-top: 0; font-size: 9px; line-height: 1.35; }
+
+    /* Header */
+    .nav-container { height: 58px; }
+    .logo { font-size: 22px; }
+    .resume-btn { display: none; }
+    .icon-btn { width: 37px; height: 37px; font-size: 15px; }
+    .nav { top: 64px; left: 15px; right: 15px; }
+
+    /* Hero: preserve two columns on phone */
+    .hero { min-height: auto; padding: 76px 0 20px; display: block; }
+    .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(118px, .65fr);
+        gap: 14px;
+        align-items: start;
+        text-align: left;
+    }
+    .hero-content { min-width: 0; }
+    .availability-badge {
+        margin: 0 0 12px;
+        padding: 5px 8px;
+        font-size: 8px;
+        line-height: 1.2;
+        white-space: nowrap;
+    }
+    .availability-badge span { width: 6px; height: 6px; flex: 0 0 6px; }
+    .hello { font-size: 12px; }
+    .hero h1 {
+        margin: 2px 0 7px;
+        font-size: clamp(33px, 9.8vw, 43px);
+        line-height: .96;
+        letter-spacing: -2.2px;
+    }
+    .hero h2 {
+        max-width: none;
+        margin: 0 0 7px;
+        font-size: clamp(15px, 4.2vw, 18px);
+        line-height: 1.08;
+    }
+    .hero-description {
+        max-width: none;
+        margin: 0;
+        font-size: 9.5px;
+        line-height: 1.45;
+    }
+    .hero-buttons {
+        margin-top: 12px;
+        display: grid;
+        grid-template-columns: 1.05fr 1fr;
+        gap: 7px;
+    }
+    .hero-buttons .btn {
+        min-height: 34px;
+        padding: 0 8px;
+        border-radius: 8px;
+        font-size: 9px;
+    }
+    .hero-links {
+        margin-top: 10px;
+        justify-content: flex-start;
+        gap: 14px;
+        flex-wrap: nowrap;
+    }
+    .hero-links a {
+        padding: 0;
+        border: 0;
+        font-size: 9px;
+        font-weight: 700;
+    }
+
+    /* Right profile area */
+    .hero-profile { width: 100%; padding-top: 34px; }
+    .profile-card {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        text-align: center;
+    }
+    body.light .profile-card { background: transparent; }
+    .photo-ring {
+        width: min(126px, 31vw);
+        height: min(126px, 31vw);
+        margin: 0 auto 10px;
+        padding: 3px;
+        box-shadow: 0 0 24px rgba(124,108,255,.28);
+    }
+    .photo-ring img { border-width: 4px; }
+    .profile-card h3, .profile-position, .location, .profile-skills, .profile-contact { display: none; }
+    .profile-stats {
+        margin-top: 0;
+        padding: 9px 0 0;
+        grid-template-columns: 1fr 1fr;
+        border: 1px solid var(--border);
+        border-radius: 11px;
+        overflow: hidden;
+        background: rgba(10, 15, 27, .72);
+    }
+    .profile-stats div { padding: 0 3px 8px; }
+    .profile-stats strong { font-size: 14px; }
+    .profile-stats span { font-size: 7px; }
+    .profile-stats::after {
+        content: "⌖  Mumbai, Maharashtra";
+        grid-column: 1 / -1;
+        display: block;
+        padding: 7px 4px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 7px;
+        text-align: center;
+    }
+
+    /* About */
+    .about-grid {
+        grid-template-columns: 1.25fr .75fr;
+        gap: 18px;
+        align-items: start;
+    }
+    .about-text .large-text { display: none; }
+    .about-text p { margin-bottom: 0; font-size: 10px; line-height: 1.5; }
+    .about-details { border-radius: 12px; }
+    .detail-row {
+        padding: 7px 8px;
+        display: block;
+        font-size: 7.5px;
+        line-height: 1.3;
+    }
+    .detail-row span { display: block; font-size: 6.5px; }
+    .detail-row strong { display: block; margin-top: 1px; text-align: left; font-size: 7.5px; }
+
+    /* Skills: 4 across like reference */
+    .skills-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; }
+    .skill-card {
+        min-height: 88px;
+        padding: 8px;
+        border-radius: 10px;
+    }
+    .skill-top { margin-bottom: 6px; }
+    .skill-icon {
+        min-width: 24px;
+        height: 24px;
+        padding: 0 4px;
+        border-radius: 6px;
+        font-size: 6px;
+    }
+    .level { display: none; }
+    .skill-card h3 { margin-bottom: 3px; font-size: 8.5px; line-height: 1.15; }
+    .skill-card p { font-size: 6.7px; line-height: 1.35; }
+
+    /* Projects: 2 side by side */
+    .projects-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+    .project-card { border-radius: 12px; }
+    .project-image { min-height: 118px; height: 118px; padding: 7px; }
+    .project-image img { max-height: 105px; object-fit: contain; }
+    .project-status { top: 6px; right: 6px; padding: 3px 5px; font-size: 5.5px; }
+    .project-content { padding: 9px; }
+    .project-number { font-size: 6px; }
+    .project-content h3 { margin: 3px 0 5px; font-size: 11px; line-height: 1.15; }
+    .project-content p { font-size: 7px; line-height: 1.45; }
+    .tech-list { margin-top: 7px; gap: 4px; }
+    .tech-list span { padding: 3px 5px; font-size: 5.5px; }
+    .project-footer { margin-top: 7px; padding-top: 6px; gap: 4px; font-size: 5.5px; }
+
+    /* Education horizontal */
+    .education-card {
+        padding: 11px;
+        grid-template-columns: 98px 1fr;
+        gap: 12px;
+        border-radius: 12px;
+        align-items: center;
+    }
+    .education-date { font-size: 8px; }
+    .degree-label { display: none; }
+    .education-main h3 { margin-top: 0; font-size: 10px; line-height: 1.15; }
+    .education-main h4 { margin-top: 3px; font-size: 7.5px; }
+    .education-main > p { margin-top: 2px; font-size: 6.5px; line-height: 1.3; }
+    .education-tags { margin-top: 5px; gap: 4px; }
+    .education-tags span { padding: 3px 5px; font-size: 5.5px; }
+
+    /* Contact compact like reference */
+    .contact { padding-bottom: 25px; }
+    .contact-card {
+        padding: 11px;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        border-radius: 12px;
+    }
+    .contact-left > p:not(.section-tag), .contact-details { display: none; }
+    .contact-left { display: flex; align-items: end; justify-content: space-between; gap: 10px; }
+    .contact-left h2 { font-size: 22px; }
+    .contact-left::after {
+        content: "I’m always open to discussing opportunities, collaborations or just a tech chat.";
+        max-width: 45%;
+        color: var(--muted);
+        font-size: 6.7px;
+        line-height: 1.35;
+        text-align: right;
+    }
+    .contact-form {
+        padding: 0;
+        grid-template-columns: 1fr 1fr 1.2fr;
+        gap: 6px;
+        border: 0;
+        background: transparent;
+    }
+    .input-group label { margin-bottom: 2px; font-size: 5.5px; }
+    .input-group input, .input-group textarea {
+        min-height: 34px;
+        padding: 7px 8px;
+        border-radius: 7px;
+        font-size: 6.5px;
+    }
+    .input-group textarea { height: 34px; min-height: 34px; resize: none; }
+    .submit-btn { grid-column: 1 / -1; min-height: 30px; font-size: 7px; border-radius: 7px; }
+    .form-message { grid-column: 1 / -1; min-height: 0; font-size: 6px; }
+
+    /* Footer single compact line */
+    .footer { padding: 18px 0 14px; }
+    .footer-content { flex-direction: row; text-align: left; gap: 8px; }
+    .footer-logo { font-size: 14px; }
+    .footer p { display: none; }
+    .footer-center { font-size: 5.5px; text-align: center; }
+    .footer-links { gap: 7px; }
+    .footer-links a { font-size: 5.5px; }
+    .copyright { margin-top: 8px; padding-top: 7px; font-size: 5.5px; }
+}
+
+@media (max-width: 390px) {
+    .container { width: calc(100% - 24px); }
+    .hero-grid { grid-template-columns: minmax(0, 1.3fr) minmax(108px, .7fr); gap: 10px; }
+    .hero h1 { font-size: 33px; }
+    .hero h2 { font-size: 14px; }
+    .hero-description { font-size: 8.8px; }
+    .hero-links { gap: 10px; }
+    .skills-grid { gap: 5px; }
+    .skill-card { padding: 7px 6px; }
+    .project-content h3 { font-size: 10px; }
+}
+
+@media (max-width: 700px) {
+
+    .project-actions {
+        margin-top: 9px;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(0, 1fr);
+
+        gap: 5px;
+    }
+
+
+    .project-actions .project-btn {
+        min-height: 28px;
+
+        padding: 0 5px;
+
+        gap: 4px;
+
+        border-radius: 7px;
+
+        font-size: 6px;
+        font-weight: 800;
+
+        white-space: nowrap;
+
+        box-shadow: none;
+    }
+
+
+    .project-actions .project-btn svg {
+        width: 9px;
+        height: 9px;
+
+        flex: 0 0 9px;
+    }
+
+
+    .project-actions .project-btn:hover {
+        transform: none;
+    }
+
+}
+
+
+/* Very small phones */
+
+@media (max-width: 390px) {
+
+    .project-actions {
+        gap: 4px;
+    }
+
+
+    .project-actions .project-btn {
+        min-height: 26px;
+
+        padding: 0 4px;
+
+        font-size: 5.5px;
+    }
+
+
+    .project-actions .project-btn svg {
+        width: 8px;
+        height: 8px;
+
+        flex-basis: 8px;
+    }
+
+}
+
+
+/* Ultra-small fallback */
+
+@media (max-width: 330px) {
+
+    .project-actions {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   CONTACT FORM — READABLE MOBILE RESTORE
+   Keep the latest unified contact panel, but never hide
+   contact details or shrink the form into tiny columns.
+========================================================= */
+.contact-card,
+.contact-left,
+.contact-details,
+.contact-form,
+.input-group {
+    min-width: 0;
+}
+
+.contact-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
+    gap: 0;
+}
+
+.contact-left {
+    display: block;
+    padding: 4px 28px 4px 2px;
+    text-align: left;
+}
+
+.contact-left > p:not(.section-tag) {
+    display: block;
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.contact-details {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.contact-details a {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    padding: 12px 14px;
+    overflow-wrap: anywhere;
+}
+
+.contact-details small {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 10px;
+}
+
+.contact-details strong {
+    display: block;
+    font-size: 13px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.contact-left::after {
+    content: none !important;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    min-width: 0;
+    padding: 4px 0 4px 28px;
+    border: 0;
+    border-left: 1px solid var(--border);
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.input-group {
+    display: block;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+}
+
+.input-group input,
+.input-group textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-height: 46px;
+    height: auto;
+    padding: 11px 13px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.input-group textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    min-height: 44px;
+    grid-column: auto;
+    font-size: 13px;
+}
+
+.form-message {
+    grid-column: auto;
+    min-height: 18px;
+    font-size: 11px;
+}
+
+@media (max-width: 700px) {
+    .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+        padding: 20px;
+    }
+
+    .contact-left {
+        padding: 0 0 20px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .contact-left h2 {
+        font-size: clamp(25px, 6vw, 32px);
+        line-height: 1.15;
+    }
+
+    .contact-left > p:not(.section-tag) {
+        font-size: 13px;
+    }
+
+    .contact-details {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 9px;
+    }
+
+    .contact-details a {
+        padding: 11px 13px;
+    }
+
+    .contact-details strong {
+        font-size: 12px;
+    }
+
+    .contact-form {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        padding: 20px 0 0;
+        border: 0;
+        background: transparent;
+    }
+
+    .input-group label {
+        font-size: 12px;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        min-height: 46px;
+        font-size: 14px;
+    }
+
+    .input-group textarea {
+        min-height: 120px;
+    }
+
+    .submit-btn {
+        min-height: 44px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 390px) {
+    .contact-card {
+        padding: 16px;
+    }
+
+    .contact-left {
+        padding-bottom: 17px;
+    }
+
+    .contact-form {
+        padding-top: 17px;
+    }
+
+    .contact-details strong {
+        font-size: 12px;
+    }
+}
+
+/* Avoid accidental horizontal scrolling on narrow screens. */
+@media (max-width: 700px) {
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .container,
+    .hero-grid,
+    .about-grid,
+    .skills-grid,
+    .projects-grid,
+    .education-card,
+    .contact-card {
+        min-width: 0;
+    }
+
+    .hero-content,
+    .hero-profile,
+    .project-card,
+    .project-content {
+        min-width: 0;
+    }
+
+    .hero-description,
+    .project-content p,
+    .detail-row strong,
+    .education-main {
+        overflow-wrap: anywhere;
+    }
+}
